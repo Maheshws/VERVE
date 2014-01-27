@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/VERVE.iml" filepath="$PROJECT_DIR$/VERVE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/verve/verve.iml" filepath="$PROJECT_DIR$/verve/verve.iml" />
+    </modules>
+  </component>
+</project>
+

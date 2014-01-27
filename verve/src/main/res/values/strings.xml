@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VERVE</string>
+    <string name="title_section1">Logo</string>
+    <string name="title_section2">Home</string>
+    <string name="title_section3">Announcement</string>
+    <string name="title_section4">Cultural</string>
+    <string name="title_section5">Sports</string>
+    <string name="title_section6">Technical</string>
+    <string name="title_section7">Extra</string>
+    <string name="title_section8">Sponsors</string>
+    <string name="title_section9">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
