@@ -54,9 +54,45 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        int cno = position + 1;
+        switch (cno) {
+            case 1:
+            case 2:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 3:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 4:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 5:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 6:fragmentManager.beginTransaction()
+                    .replace(R.id.container, TechEventsListViewFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 7:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 8:fragmentManager.beginTransaction()
+                    .replace(R.id.container, SponsorsFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            case 9:fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+                break;
+            default:
+
+        }
+
     }
 
     public void onSectionAttached(int number) {
@@ -105,7 +141,7 @@ public class MainActivity extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.main, menu);
+           // getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
         }
@@ -124,6 +160,12 @@ public class MainActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
+    public void setActionBarTitle(String Title) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setTitle(Title);
+    }
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -153,7 +195,8 @@ public class MainActivity extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);            textView.setText("WELCOME!");
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText("WELCOME!");
             return rootView;
         }
 
