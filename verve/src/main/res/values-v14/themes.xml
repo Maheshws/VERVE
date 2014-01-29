@@ -5,7 +5,7 @@
 
   <style name="vTheme" parent="@style/_vTheme"/>
 
-  <style name="_vTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+  <style name="_vTheme" parent="Theme.AppCompat">
 
     <item name="android:editTextBackground">@drawable/vtheme_edit_text_holo_light</item>
 
