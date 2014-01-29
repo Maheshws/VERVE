@@ -1,7 +1,9 @@
 package com.mahesh.verve;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.preference.PreferenceActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -38,7 +40,7 @@ public class MainActivity extends ActionBarActivity
         setContentView(R.layout.activity_main);
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
-        tintManager.setTintResource(R.drawable.ab_bottom_solid_vtheme);
+        tintManager.setStatusBarTintResource(R.drawable.ab_bottom_solid_vtheme);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -66,11 +68,11 @@ public class MainActivity extends ActionBarActivity
                     .commit();
                 break;
             case 4:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .replace(R.id.container, CultEventsListViewFragment.newInstance(position + 1))
                     .commit();
                 break;
             case 5:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .replace(R.id.container, SportsEventsListViewFragment.newInstance(position + 1))
                     .commit();
                 break;
             case 6:fragmentManager.beginTransaction()
@@ -78,16 +80,14 @@ public class MainActivity extends ActionBarActivity
                     .commit();
                 break;
             case 7:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .replace(R.id.container, FunEventsListViewFragment.newInstance(position + 1))
                     .commit();
                 break;
             case 8:fragmentManager.beginTransaction()
                     .replace(R.id.container, SponsorsFragment.newInstance(position + 1))
                     .commit();
                 break;
-            case 9:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                    .commit();
+            case 9:startActivity(new Intent(this, PreferencesActivity.class));
                 break;
             default:
 

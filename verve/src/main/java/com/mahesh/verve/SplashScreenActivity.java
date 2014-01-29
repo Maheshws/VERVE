@@ -76,6 +76,11 @@ public class SplashScreenActivity extends Activity {
                 updateProgess();
                 utils.getTechEvents();
                 updateProgess();
+                utils.getCultEvents();
+                updateProgess();
+                utils.getSportsEvents();
+                updateProgess();
+                utils.getFunEvents();
                 updateProgess();
                 errorFlag = utils.getErrorFlag();
                 updateProgess();
@@ -107,7 +112,7 @@ public class SplashScreenActivity extends Activity {
     protected void actionComplete() {
         updateProgess();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
