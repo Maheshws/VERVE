@@ -119,7 +119,10 @@ public class TechEventsListViewFragment extends Fragment {
             current = alltechEvents.get(position);
 
             TextView Titletext = (TextView) view.findViewById(R.id.event_name_textview);
-            Titletext.setText(current.getEvent_name());
+            String Ttitle=current.getEvent_name().replace("</br>","<br>");
+            Ttitle=Ttitle.replace("\\'","'");
+            Titletext.setText(Ttitle);
+
 
             return view;
         }

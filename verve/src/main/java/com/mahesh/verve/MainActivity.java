@@ -50,6 +50,10 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, PlaceholderFragment.newInstance(1))
+                .commit();
     }
 
     @Override
@@ -58,33 +62,40 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         int cno = position + 1;
         switch (cno) {
-            case 1:
+            case 1:break;
             case 2:fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 3:fragmentManager.beginTransaction()
                     .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 4:fragmentManager.beginTransaction()
                     .replace(R.id.container, CultEventsListViewFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 5:fragmentManager.beginTransaction()
                     .replace(R.id.container, SportsEventsListViewFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 6:fragmentManager.beginTransaction()
                     .replace(R.id.container, TechEventsListViewFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 7:fragmentManager.beginTransaction()
                     .replace(R.id.container, FunEventsListViewFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 8:fragmentManager.beginTransaction()
                     .replace(R.id.container, SponsorsFragment.newInstance(position + 1))
+                    .addToBackStack(null)
                     .commit();
                 break;
             case 9:startActivity(new Intent(this, PreferencesActivity.class));

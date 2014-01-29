@@ -55,13 +55,19 @@ public class EventViewFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         TextView Titletext = (TextView) getActivity().findViewById(R.id.textEventName);
-        Titletext.setText(currentEvent.getEvent_name());
+        String Ttitle=currentEvent.getEvent_name().replace("</br>","<br>");
+        Ttitle=Ttitle.replace("\\'","'");
+        Titletext.setText(Ttitle);
 
         TextView Desctext = (TextView) getActivity().findViewById(R.id.textDesc);
-        Desctext.setText(Html.fromHtml(currentEvent.getEvent_description()));
+        String Desc=currentEvent.getEvent_description().replace("</br>","<br>");
+        Desc=Desc.replace("\\'","'");
+        Desctext.setText(Html.fromHtml(Desc));
 
         TextView Rulestext = (TextView) getActivity().findViewById(R.id.textEventRules);
-        Rulestext.setText(Html.fromHtml(currentEvent.getEvent_rules()));
+        String Rulestxt=currentEvent.getEvent_rules().replace("</br>","<br>");
+        Rulestxt=Rulestxt.replace("\\'","'");
+        Rulestext.setText(Html.fromHtml(Rulestxt));
 
 
         ImageView imageView= (ImageView) getActivity().findViewById(R.id.imageView);
