@@ -15,11 +15,8 @@
             android:key="AboutApp"
             android:title="About VERVE"></Preference>
         <Preference
-            android:key="ClearData"
-            android:title="Clear Application Data"></Preference>
-        <Preference
             android:key="ContactUs"
-            android:title="Contact VIT ACM Team"
+            android:title="Contact VERVE Team"
             android:summary="via Email">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -31,7 +28,7 @@
 
         <Preference
             android:key="VisitWebsite"
-            android:title="Visit VERVE Website"
+            android:title="VERVE Website"
             android:summary="Click here!">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -42,8 +39,7 @@
                 android:data="http://vitmumbai.acm.org/team.php" />
         </Preference>-->
     </PreferenceCategory>
-    <PreferenceCategory android:title="Credits">
-        <Preference android:title="App Developer" android:summary="Mahesh"></Preference>
-        <Preference android:title="Website" android:summary="Kiran"></Preference>
+    <PreferenceCategory android:title="Developer">
+        <Preference android:key="PlayStore" android:title="Mahesh" android:summary="Click to Visit Play Store"></Preference>
     </PreferenceCategory>
 </PreferenceScreen>

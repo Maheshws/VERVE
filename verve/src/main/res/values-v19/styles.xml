@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.vTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.vTheme" parent="@style/Theme.AppCompat">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_vtheme</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Vtheme</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Vtheme</item>
@@ -40,6 +40,7 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_vtheme</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_vtheme</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Vtheme</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="ActionBar.Transparent.Vtheme" parent="@style/Widget.AppCompat.ActionBar">

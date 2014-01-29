@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.vTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.vTheme" parent="@style/Theme.AppCompat">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_vtheme</item>
         <item name="android:popupMenuStyle">@style/PopupMenu.Vtheme</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Vtheme</item>

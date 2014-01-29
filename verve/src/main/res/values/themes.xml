@@ -3,53 +3,53 @@
 <!-- Generated with http://android-holo-colors.com -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <style name="vTheme" parent="@style/_vTheme"/>
+    <style name="vTheme" parent="@style/_vTheme" />
 
-  <style name="_vTheme" parent="Theme.AppCompat">
+    <style name="_vTheme" parent="Theme.AppCompat">
 
-    <item name="android:editTextStyle">@style/EditTextvTheme</item>
+        <item name="android:editTextStyle">@style/EditTextvTheme</item>
 
-    <item name="android:textColorHighlight">#99ff9900</item>
+        <item name="android:textColorHighlight">#99ff9900</item>
 
-    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewvTheme</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewvTheme</item>
 
-    <item name="android:checkboxStyle">@style/CheckBoxvTheme</item>
+        <item name="android:checkboxStyle">@style/CheckBoxvTheme</item>
 
-    <item name="android:radioButtonStyle">@style/RadioButtonvTheme</item>
+        <item name="android:radioButtonStyle">@style/RadioButtonvTheme</item>
 
-    <item name="android:buttonStyle">@style/ButtonvTheme</item>
+        <item name="android:buttonStyle">@style/ButtonvTheme</item>
 
-    <item name="android:imageButtonStyle">@style/ImageButtonvTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonvTheme</item>
 
-    <item name="android:spinnerStyle">@style/SpinnervTheme</item>
+        <item name="android:spinnerStyle">@style/SpinnervTheme</item>
 
-    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemvTheme</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemvTheme</item>
 
-    <item name="android:progressBarStyleHorizontal">@style/ProgressBarvTheme</item>
+        <item name="android:progressBarStyleHorizontal">@style/ProgressBarvTheme</item>
 
-    <item name="android:seekBarStyle">@style/SeekBarvTheme</item>
+        <item name="android:seekBarStyle">@style/SeekBarvTheme</item>
 
-    <item name="android:ratingBarStyle">@style/RatingBarvTheme</item>
+        <item name="android:ratingBarStyle">@style/RatingBarvTheme</item>
 
-    <item name="android:buttonStyleToggle">@style/TogglevTheme</item>
+        <item name="android:buttonStyleToggle">@style/TogglevTheme</item>
 
-    <item name="android:listViewStyle">@style/ListViewvTheme</item>
+        <item name="android:listViewStyle">@style/ListViewvTheme</item>
 
-    <item name="android:listViewWhiteStyle">@style/ListViewvTheme.White</item>
+        <item name="android:listViewWhiteStyle">@style/ListViewvTheme.White</item>
 
-    <item name="android:spinnerItemStyle">@style/SpinnerItemvTheme</item>
-      <item name="actionBarItemBackground">@drawable/selectable_background_vtheme</item>
-      <item name="popupMenuStyle">@style/PopupMenu.Vtheme</item>
-      <item name="dropDownListViewStyle">@style/DropDownListView.Vtheme</item>
-      <item name="actionBarTabStyle">@style/ActionBarTabStyle.Vtheme</item>
-      <item name="actionDropDownStyle">@style/DropDownNav.Vtheme</item>
-      <item name="actionBarStyle">@style/ActionBar.Solid.Vtheme</item>
-      <item name="actionModeBackground">@drawable/cab_background_top_vtheme</item>
-      <item name="actionModeSplitBackground">@drawable/cab_background_bottom_vtheme</item>
-      <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Vtheme</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItemvTheme</item>
+        <item name="actionBarItemBackground">@drawable/selectable_background_vtheme</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Vtheme</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Vtheme</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Vtheme</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Vtheme</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Vtheme</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_vtheme</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_vtheme</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Vtheme</item>
 
-      <!-- Light.DarkActionBar specific -->
-      <item name="actionBarWidgetTheme">@style/Theme.Vtheme.Widget</item>
-  </style>
+        <!-- Light.DarkActionBar specific -->
+        <item name="actionBarWidgetTheme">@style/Theme.Vtheme.Widget</item>
+    </style>
 
 </resources>

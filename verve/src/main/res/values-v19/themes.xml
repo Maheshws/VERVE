@@ -48,7 +48,7 @@
       <item name="android:actionModeBackground">@drawable/cab_background_top_vtheme</item>
       <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_vtheme</item>
       <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Vtheme</item>
-
+      <item name="android:textColor">#ffffff</item>
       <!-- Light.DarkActionBar specific -->
       <item name="android:actionBarWidgetTheme">@style/Theme.Vtheme.Widget</item>
       <item name="android:windowTranslucentStatus">true</item>

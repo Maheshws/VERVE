@@ -3,106 +3,113 @@
 <!-- Generated with http://android-holo-colors.com -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <style name="EditTextvTheme" parent="android:Widget.EditText">
-	  <item name="android:background">@drawable/vtheme_edit_text_holo_light</item>
-	  <item name="android:textColor">#000000</item>
-  </style>
+    <style name="EditTextvTheme" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/vtheme_edit_text_holo_light</item>
+        <item name="android:textColor">#000000</item>
+    </style>
 
-  <style name="AutoCompleteTextViewvTheme" parent="android:Widget.AutoCompleteTextView">
-      <item name="android:dropDownSelector">@drawable/vtheme_list_selector_holo_light</item>
-	  <item name="android:background">@drawable/vtheme_edit_text_holo_light</item>
-	  <item name="android:textColor">#000000</item>
-  </style>
+    <style name="AutoCompleteTextViewvTheme" parent="android:Widget.AutoCompleteTextView">
+        <item name="android:dropDownSelector">@drawable/vtheme_list_selector_holo_light</item>
+        <item name="android:background">@drawable/vtheme_edit_text_holo_light</item>
+        <item name="android:textColor">#000000</item>
+    </style>
 
-  <style name="CheckBoxvTheme" parent="android:Widget.CompoundButton.CheckBox">
-      <item name="android:button">@drawable/vtheme_btn_check_holo_light</item>
-  </style>
+    <style name="CheckBoxvTheme" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/vtheme_btn_check_holo_light</item>
+    </style>
 
-  <style name="RadioButtonvTheme" parent="android:Widget.CompoundButton.RadioButton">
-      <item name="android:button">@drawable/vtheme_btn_radio_holo_light</item>
-  </style>
+    <style name="RadioButtonvTheme" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/vtheme_btn_radio_holo_light</item>
+    </style>
 
-  <style name="ButtonvTheme" parent="android:Widget.Button">
-	  <item name="android:background">@drawable/vtheme_btn_default_holo_light</item>
-	  <item name="android:minHeight">48dip</item>
-	  <item name="android:minWidth">64dip</item>
-	  <item name="android:textColor">#000000</item>
-  </style>
+    <style name="ButtonvTheme" parent="android:Widget.Button">
+        <item name="android:background">@drawable/vtheme_btn_default_holo_light</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textColor">#000000</item>
+    </style>
 
-  <style name="ImageButtonvTheme" parent="android:Widget.ImageButton">
-	  <item name="android:background">@drawable/vtheme_btn_default_holo_light</item>
-  </style>
+    <style name="ImageButtonvTheme" parent="android:Widget.ImageButton">
+        <item name="android:background">@drawable/vtheme_btn_default_holo_light</item>
+    </style>
 
-  <style name="SpinnervTheme" parent="android:Widget.Spinner">
-      <item name="android:background">@drawable/vtheme_spinner_background_holo_light</item>
-      <item name="android:dropDownSelector">@drawable/vtheme_list_selector_holo_light</item>
-  </style>
+    <style name="SpinnervTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/vtheme_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/vtheme_list_selector_holo_light</item>
+    </style>
 
-  <style name="SpinnerDropDownItemvTheme" parent="android:Widget.DropDownItem.Spinner">
-      <item name="android:checkMark">@drawable/vtheme_btn_radio_holo_light</item>
-  </style>
-  <style name="TabvTheme">
-      <item name="android:gravity">center_horizontal</item>
-      <item name="android:paddingLeft">16dip</item>
-      <item name="android:paddingRight">16dip</item>
-      <item name="android:background">@drawable/vtheme_tab_indicator_holo</item>
-      <item name="android:layout_width">0dip</item>
-      <item name="android:layout_weight">1</item>
-      <item name="android:minWidth">80dip</item>
-  </style>
+    <style name="SpinnerDropDownItemvTheme" parent="android:Widget.DropDownItem.Spinner">
+        <item name="android:checkMark">@drawable/vtheme_btn_radio_holo_light</item>
+    </style>
 
-  <style name="TabTextvTheme">
-	  <item name="android:textColor">#000000</item>
-      <item name="android:textSize">12sp</item>
-      <item name="android:textStyle">bold</item>
-      <!-- v14 <item name="android:textAllCaps">true</item> -->
-      <item name="android:ellipsize">marquee</item>
-      <item name="android:maxLines">2</item>
-      <item name="android:maxWidth">180dip</item>
-  </style>
+    <style name="TabvTheme">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+        <item name="android:background">@drawable/vtheme_tab_indicator_holo</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minWidth">80dip</item>
+    </style>
 
-  <style name="ProgressBarvTheme" parent="android:Widget.ProgressBar.Horizontal">
-      <item name="android:progressDrawable">@drawable/vtheme_progress_horizontal_holo_light</item>
-      <item name="android:indeterminateDrawable">@drawable/vtheme_progress_indeterminate_horizontal_holo_light</item>
-      <item name="android:minHeight">16dip</item>
-      <item name="android:maxHeight">16dip</item>
-  </style>
+    <style name="TabTextvTheme">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <!-- v14 <item name="android:textAllCaps">true</item> -->
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:maxWidth">180dip</item>
+    </style>
 
-  <style name="SeekBarvTheme" parent="android:Widget.SeekBar">
-      <item name="android:progressDrawable">@drawable/vtheme_scrubber_progress_horizontal_holo_light</item>
-      <item name="android:indeterminateDrawable">@drawable/vtheme_scrubber_progress_horizontal_holo_light</item>
-      <item name="android:minHeight">13dip</item>
-      <item name="android:maxHeight">13dip</item>
-      <item name="android:thumb">@drawable/vtheme_scrubber_control_selector_holo_light</item>
-      <item name="android:thumbOffset">16dip</item>
-      <item name="android:paddingLeft">16dip</item>
-      <item name="android:paddingRight">16dip</item>
-  </style>
+    <style name="ProgressBarvTheme" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/vtheme_progress_horizontal_holo_light</item>
+        <item name="android:indeterminateDrawable">
+            @drawable/vtheme_progress_indeterminate_horizontal_holo_light
+        </item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
 
-  <style name="RatingBarvTheme" parent="android:Widget.RatingBar">
-      <item name="android:progressDrawable">@drawable/vtheme_ratingbar_full_holo_light</item>
-      <item name="android:indeterminateDrawable">@drawable/vtheme_ratingbar_full_holo_light</item>
-  </style>
+    <style name="SeekBarvTheme" parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">
+            @drawable/vtheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/vtheme_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:maxHeight">13dip</item>
+        <item name="android:thumb">@drawable/vtheme_scrubber_control_selector_holo_light</item>
+        <item name="android:thumbOffset">16dip</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+    </style>
 
-  <style name="TogglevTheme" parent="android:Widget.Button.Toggle">
-      <item name="android:background">@drawable/vtheme_btn_toggle_holo_light</item>
-      <item name="android:minHeight">48dip</item>
-	  <item name="android:textColor">#000000</item>
-  </style>
+    <style name="RatingBarvTheme" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/vtheme_ratingbar_full_holo_light</item>
+        <item name="android:indeterminateDrawable">@drawable/vtheme_ratingbar_full_holo_light</item>
+    </style>
 
-  <style name="ListViewvTheme" parent="android:Widget.ListView">
-      <item name="android:listSelector">@drawable/vtheme_list_selector_holo_light</item>
-  </style>
+    <style name="TogglevTheme" parent="android:Widget.Button.Toggle">
+        <item name="android:background">@drawable/vtheme_btn_toggle_holo_light</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:textColor">#000000</item>
+    </style>
 
-  <style name="ListViewvTheme.White" parent="android:Widget.ListView.White">
-      <item name="android:listSelector">@drawable/vtheme_list_selector_holo_light</item>
-  </style>
+    <style name="ListViewvTheme" parent="android:Widget.ListView">
+        <item name="android:listSelector">@drawable/vtheme_list_selector_holo_light</item>
+    </style>
 
-  <style name="SpinnerItemvTheme" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
-      <item name="android:textColor">#000000</item>
-  </style>
-  
-  <style name="Theme.vTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <style name="ListViewvTheme.White" parent="android:Widget.ListView.White">
+        <item name="android:listSelector">@drawable/vtheme_list_selector_holo_light</item>
+    </style>
+
+    <style name="SpinnerItemvTheme" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="Theme.vTheme" parent="@style/Theme.AppCompat">
         <item name="actionBarItemBackground">@drawable/selectable_background_vtheme</item>
         <item name="popupMenuStyle">@style/PopupMenu.Vtheme</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Vtheme</item>
@@ -113,7 +120,7 @@
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_vtheme</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Vtheme</item>
 
-                <!-- Light.DarkActionBar specific -->
+        <!-- Light.DarkActionBar specific -->
         <item name="actionBarWidgetTheme">@style/Theme.Vtheme.Widget</item>
 
     </style>
@@ -129,11 +136,11 @@
         <item name="background">@drawable/ab_transparent_vtheme</item>
         <item name="progressBarStyle">@style/ProgressBar.Vtheme</item>
     </style>
-	
-    <style name="PopupMenu.Vtheme" parent="@style/Widget.AppCompat.PopupMenu">	
-        <item name="android:popupBackground">@drawable/menu_dropdown_panel_vtheme</item>	
+
+    <style name="PopupMenu.Vtheme" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_vtheme</item>
     </style>
-	
+
     <style name="DropDownListView.Vtheme" parent="@style/Widget.AppCompat.ListView.DropDown">
         <item name="android:listSelector">@drawable/selectable_background_vtheme</item>
     </style>
@@ -141,21 +148,21 @@
     <style name="ActionBarTabStyle.Vtheme" parent="@style/Widget.AppCompat.ActionBar.TabView">
         <item name="android:background">@drawable/tab_indicator_ab_vtheme</item>
     </style>
-	
+
     <style name="DropDownNav.Vtheme" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
         <item name="android:background">@drawable/spinner_background_ab_vtheme</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_vtheme</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_vtheme</item>
     </style>
-    
+
     <style name="ProgressBar.Vtheme" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_vtheme</item>
     </style>
-    
+
     <style name="ActionButton.CloseMode.Vtheme" parent="@style/Widget.AppCompat.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_vtheme</item>
     </style>
-    
+
     <!-- this style is only referenced in a Light.DarkActionBar based theme -->
     <style name="Theme.Vtheme.Widget" parent="@style/Theme.AppCompat">
         <item name="popupMenuStyle">@style/PopupMenu.Vtheme</item>
