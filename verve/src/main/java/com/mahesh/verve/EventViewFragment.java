@@ -62,12 +62,18 @@ public class EventViewFragment extends Fragment {
         TextView Desctext = (TextView) getActivity().findViewById(R.id.textDesc);
         String Desc=currentEvent.getEvent_description().replace("</br>","<br>");
         Desc=Desc.replace("\\'","'");
-        Desctext.setText(Html.fromHtml(Desc));
+        if(Desc.equals("null"))
+            Desctext.setText(Html.fromHtml(""));
+        else
+            Desctext.setText(Html.fromHtml(Desc));
 
         TextView Rulestext = (TextView) getActivity().findViewById(R.id.textEventRules);
         String Rulestxt=currentEvent.getEvent_rules().replace("</br>","<br>");
         Rulestxt=Rulestxt.replace("\\'","'");
-        Rulestext.setText(Html.fromHtml(Rulestxt));
+        if(Rulestxt.equals("null"))
+            Rulestext.setText(Html.fromHtml(""));
+        else
+            Rulestext.setText(Html.fromHtml(Rulestxt));
 
 
         ImageView imageView= (ImageView) getActivity().findViewById(R.id.imageView);
