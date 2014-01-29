@@ -247,4 +247,23 @@ public class UtilitiesMethod {
             Log.e("log_tag_fillSportsevents", "Error Parsing Data " + e.toString());
         }
     }
+
+
+    public void fillMyAnnouncements(List<AnnouncementObject> allAnnouncements, Context context) {
+        SharedPreferences prefs = context.getSharedPreferences("app_data", 0);
+        String result = prefs.getString("announcementslist", null);
+        try {
+            JSONArray jArray = new JSONArray(result);
+
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject json = jArray.getJSONObject(i);
+                allAnnouncements.add(new AnnouncementObject(json.getInt("id"), json.getString("title"), json.getString("message")));
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+            Log.e("log_tag_announcement", "Error Parsing Data for announcement" + e.toString());
+            e.printStackTrace();
+        }
+    }
 }

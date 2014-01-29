@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity
                     .commit();
                 break;
             case 3:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .replace(R.id.container, AnnouncementHomeFragment.newInstance(position + 1))
                     .addToBackStack(null)
                     .commit();
                 break;
@@ -186,7 +186,7 @@ public class MainActivity extends ActionBarActivity
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-
+        private Activity parent;
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -214,8 +214,13 @@ public class MainActivity extends ActionBarActivity
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
+            parent = activity;
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
+        }
+        public void onResume() {
+            super.onResume();
+            ((MainActivity) parent).setActionBarTitle(getString(R.string.title_section2));
         }
     }
 
