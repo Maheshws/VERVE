@@ -10,9 +10,10 @@
     <string name="title_section6">Technical Events</string>
     <string name="title_section7">Fun Events</string>
     <string name="title_section8">Sponsors</string>
-    <string name="title_section9">Settings</string>
+    <string name="title_section9">Options</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string name="contact_developer_uri">mailto:contact@verveoverheat.in</string>
 
 </resources>
