@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_gravity="center"
-        android:src="@drawable/ic_drawer_image" />
+        android:src="@drawable/opening_image" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
