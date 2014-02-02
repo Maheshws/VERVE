@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -38,10 +39,11 @@ public class SplashScreenActivity extends Activity {
         }
         setContentView(R.layout.splash_screen_activity);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        TextView txtMessage = (TextView) findViewById(R.id.fullscreen_content);
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_in);
-        txtMessage.startAnimation(animFadein);
+
+        ImageView imgv= (ImageView) findViewById(R.id.imageView);
+        imgv.startAnimation(animFadein);
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
         tintManager.setTintColor(Color.parseColor("#000100"));
@@ -69,7 +71,11 @@ public class SplashScreenActivity extends Activity {
                 }
             });
 
-        } else {
+        }
+        else if(first_run==false) {
+            actionComplete();
+        }
+        else {
             try {
                 UtilitiesMethod utils = new UtilitiesMethod();
                 utils.setContext(getApplicationContext());
@@ -81,6 +87,8 @@ public class SplashScreenActivity extends Activity {
                 utils.getSportsEvents();
                 updateProgess();
                 utils.getFunEvents();
+                updateProgess();
+                utils.getAnnouncements();
                 updateProgess();
                 errorFlag = utils.getErrorFlag();
                 updateProgess();
@@ -121,7 +129,7 @@ public class SplashScreenActivity extends Activity {
         if (Service) {
             Log.d("service", "Preferences is OFF!!");
         } else {
-            //startService(new Intent(this, NotificationService.class));
+            startService(new Intent(this, NotificationService.class));
         }
         startActivity(new Intent(this, MainActivity.class));
         finish();
