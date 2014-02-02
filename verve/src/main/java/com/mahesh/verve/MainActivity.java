@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(1))
+                .replace(R.id.container, HomeSliderFragment.newInstance(1))
                 .commit();
     }
 
@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity
         switch (cno) {
             case 1:break;
             case 2:fragmentManager.beginTransaction()
-                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .replace(R.id.container, HomeSliderFragment.newInstance(position + 1))
                     .addToBackStack(null)
                     .commit();
                 break;
@@ -98,7 +98,14 @@ public class MainActivity extends ActionBarActivity
                     .addToBackStack(null)
                     .commit();
                 break;
-            case 9:startActivity(new Intent(this, PreferencesActivity.class));
+
+            case 9:fragmentManager.beginTransaction()
+                    .replace(R.id.container, ContactFragment.newInstance(position + 1))
+                    .addToBackStack(null)
+                    .commit();
+                break;
+
+            case 10:startActivity(new Intent(this, PreferencesActivity.class));
                 break;
             default:
 
@@ -134,6 +141,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 9:
                 mTitle = getString(R.string.title_section9);
+                break;
+            case 10:
+                mTitle = getString(R.string.title_section10);
                 break;
         }
     }
