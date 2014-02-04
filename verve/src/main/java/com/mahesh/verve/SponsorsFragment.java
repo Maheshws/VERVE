@@ -1,11 +1,15 @@
 package com.mahesh.verve;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 /**
@@ -36,6 +40,7 @@ public class SponsorsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_sponsors, container, false);
+
         return rootView;
     }
 
@@ -44,6 +49,32 @@ public class SponsorsFragment extends Fragment {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
+    }
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        new Thread(new Runnable() {
+            public void run() {
+                UtilitiesMethod utils=new UtilitiesMethod();
+                utils.setContext(getActivity());
+                utils.getSponsors();
+                final String contentHTML=utils.getSponsorsList();
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    WebView contentView = (WebView) getActivity().findViewById(R.id.webView);
+                    contentView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+                    contentView.getSettings().setLoadWithOverviewMode(true);
+                    contentView.getSettings().setUseWideViewPort(true);
+                    contentView.getSettings().setBuiltInZoomControls(false);
+                    contentView.setBackgroundColor(Color.TRANSPARENT);
+                    contentView.loadDataWithBaseURL(null, contentHTML, "text/html", "UTF-8", null);
+                }
+            });
+
+            }
+        }).start();
+
+
     }
 }
 

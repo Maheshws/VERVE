@@ -37,25 +37,12 @@ public class HomeSliderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home_new, container, false);
-        ImageView img1v= (ImageView) rootView.findViewById(R.id.imageView);
-        ImageView img2v= (ImageView) rootView.findViewById(R.id.imageView2);
-        ImageView img3v= (ImageView) rootView.findViewById(R.id.imageView3);
-        ImageView img4v= (ImageView) rootView.findViewById(R.id.imageView4);
-        ImageView img5v= (ImageView) rootView.findViewById(R.id.imageView5);
-        try {
-            UtilitiesMethod utils=new UtilitiesMethod();
-            img1v.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(), R.drawable.home_img1, 200, 280));
-            img2v.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(),R.drawable.home_img2, 200, 280));
-            img3v.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(),R.drawable.home_img3, 200, 280));
-            img4v.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(),R.drawable.home_img4, 200, 280));
-            img5v.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(),R.drawable.home_img5, 200, 280));
-
-
-        } catch (Exception e) {
-
-        }
-
-
+        ImageView imgv= (ImageView) rootView.findViewById(R.id.imageView);
+           try {
+                  UtilitiesMethod utils=new UtilitiesMethod();
+                    imgv.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(), R.drawable.home_img1, 480, 640));
+               } catch (Exception e) {
+           }
         return rootView;
     }
 

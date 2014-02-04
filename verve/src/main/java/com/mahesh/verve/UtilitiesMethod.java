@@ -30,7 +30,7 @@ import java.util.List;
 public class UtilitiesMethod {
     private boolean ErrorFlag=false;
     private Context context;
-    //private final String DOMAIN="http://192.168.43.147/appfiles/";
+    //private final String DOMAIN="http://192.168.1.5/appfiles/";
     //private final String DOMAIN="http://192.168.2.7/appfiles/";
     private final String DOMAIN="http://verveoverheat.in/appfiles/";
     private final String IMAGEURL="http://verveoverheat.in/ad_panel/pic/";
@@ -112,6 +112,42 @@ public class UtilitiesMethod {
 
     }
 
+    public void getSponsors() {
+        String URL = "getsponsors.php";
+        String RESULT;
+        String toFile = DOMAIN + URL;
+        InputStream isr = null;
+        try {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = new HttpPost(toFile);
+            HttpResponse response = httpclient.execute(httppost);
+            HttpEntity entity = response.getEntity();
+            isr = entity.getContent();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(isr, "iso-8859-1"), 8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            isr.close();
+            RESULT = sb.toString();
+            if (RESULT == null) {
+                Log.e("log_utils_sponsors", "Error in http connection ");
+                ErrorFlag = true;
+            } else {
+                SharedPreferences prefs = context.getSharedPreferences("app_data", 0);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("sponsorslist", RESULT);
+                editor.commit();
+            }
+        } catch (Exception e) {
+            Log.e("log_utils_sponsors", "Error in http connection " + e.toString());
+            e.printStackTrace();
+            ErrorFlag = true;
+        }
+
+    }
+
     public void getSportsEvents() {
         String URL = "getsportsevents.php";
         String RESULT;
@@ -142,6 +178,7 @@ public class UtilitiesMethod {
             }
         } catch (Exception e) {
             Log.e("log_utils_sports_events", "Error in http connection " + e.toString());
+            e.printStackTrace();
             ErrorFlag = true;
         }
 
@@ -406,42 +443,56 @@ public class UtilitiesMethod {
             e.printStackTrace();
         }
     }
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
 
-        if (height > reqHeight || width > reqWidth) {
+    public String getSponsorsList() {
+        SharedPreferences prefs = context.getSharedPreferences("app_data", 0);
+        String result = prefs.getString("sponsorslist", null);
+        String RES = null;
+        try {
+            JSONArray jArray = new JSONArray(result);
 
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) > reqHeight
-                    && (halfWidth / inSampleSize) > reqWidth) {
-                inSampleSize *= 2;
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject json = jArray.getJSONObject(i);
+                RES=RES+"<font color=\"WHITE\"><b>"+json.getString("sponsors_name")+"</b><br><a href='"+json.getString("web_link")+"'><img src='"+IMAGEURL+json.getString("image_name")+"'style=\"width:360px;height:180px;\"></a></font><br><br>";
             }
+        } catch (Exception e) {
+            // TODO: handle exception
+            Log.e("log_tag_sponsors", "Error Parsing Data for announcement" + e.toString());
+            e.printStackTrace();
         }
-
-        return inSampleSize;
+        return RES;
     }
+     public static int calculateInSampleSize(
+           BitmapFactory.Options options, int reqWidth, int reqHeight) {
+          // Raw height and width of image
+            final int height = options.outHeight;
+            final int width = options.outWidth;
+            int inSampleSize = 1;
+            if (height > reqHeight || width > reqWidth) {
+                final int halfHeight = height / 2;
+                final int halfWidth = width / 2;
+               // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+                // height and width larger than the requested height and width.
+                while ((halfHeight / inSampleSize) > reqHeight
+                      && (halfWidth / inSampleSize) > reqWidth) {
+                               inSampleSize *= 2;
+                }
+            }
+         return inSampleSize;
+     }
 
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
+     public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                             int reqWidth, int reqHeight) {
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeResource(res, resId, options);
 
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
+               // Calculate inSampleSize
+             options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+                 // Decode bitmap with inSampleSize set
+              options.inJustDecodeBounds = false;
+             return BitmapFactory.decodeResource(res, resId, options);
+            }
 
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
 
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
     }
-}
