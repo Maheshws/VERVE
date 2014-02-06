@@ -1,7 +1,6 @@
 package com.mahesh.verve;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 /**
  * Created by Mahesh on 1/30/14.
@@ -24,6 +22,7 @@ public class ContactFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private Activity parent;
+
     /**
      * Returns a new instance of this fragment for the given section
      * number.
@@ -50,35 +49,36 @@ public class ContactFragment extends Fragment {
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
     public void onResume() {
         super.onResume();
         ((MainActivity) parent).setActionBarTitle(getString(R.string.title_section9));
     }
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if(isGMaps()) {
-        ImageView map123= (ImageView) getActivity().findViewById(R.id.imageView);
-        map123.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri uri= Uri.parse("geo:19.021652,72.870715?q=19.021652,72.87071499999(Vidyalankar Institute of Technology)");
-                Intent intent=new Intent(Intent.ACTION_VIEW,uri);
-                startActivity(intent);
-            }
-        });
+        if (isGMaps()) {
+            ImageView map123 = (ImageView) getActivity().findViewById(R.id.imageView);
+            map123.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Uri uri = Uri.parse("geo:19.021652,72.870715?q=19.021652,72.87071499999(Vidyalankar Institute of Technology)");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
-    public boolean isGMaps()
-    {
-        try{
-            ApplicationInfo info =getActivity().getPackageManager().getApplicationInfo("com.google.android.maps",0);
+    public boolean isGMaps() {
+        try {
+            ApplicationInfo info = getActivity().getPackageManager().getApplicationInfo("com.google.android.maps", 0);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        try{
-            ApplicationInfo info =getActivity().getPackageManager().getApplicationInfo("com.google.android.apps.maps",0);
+        try {
+            ApplicationInfo info = getActivity().getPackageManager().getApplicationInfo("com.google.android.apps.maps", 0);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

@@ -30,6 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AboutVERVEActivity"
+            android:theme="@style/DialogTheme"
+            android:logo="@drawable/ic_actionbar_image"
+            android:label="About VERVE"></activity>
         <activity android:name=".PreferencesActivity"></activity>
         <service android:name="NotificationService"></service>
         <receiver android:name="Broadcaster">

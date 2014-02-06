@@ -3,12 +3,10 @@ package com.mahesh.verve;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 /**
  * Created by Mahesh on 1/30/14.
@@ -20,6 +18,7 @@ public class HomeSliderFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
     private Activity parent;
+
     /**
      * Returns a new instance of this fragment for the given section
      * number.
@@ -37,12 +36,12 @@ public class HomeSliderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home_new, container, false);
-        ImageView imgv= (ImageView) rootView.findViewById(R.id.imageView);
-           try {
-                  UtilitiesMethod utils=new UtilitiesMethod();
-                    imgv.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(), R.drawable.home_img1, 480, 640));
-               } catch (Exception e) {
-           }
+        ImageView imgv = (ImageView) rootView.findViewById(R.id.imageView);
+        try {
+            UtilitiesMethod utils = new UtilitiesMethod();
+            imgv.setImageBitmap(utils.decodeSampledBitmapFromResource(getResources(), R.drawable.home_img1, 480, 640));
+        } catch (Exception e) {
+        }
         return rootView;
     }
 
@@ -53,6 +52,7 @@ public class HomeSliderFragment extends Fragment {
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
     public void onResume() {
         super.onResume();
         ((MainActivity) parent).setActionBarTitle(getString(R.string.title_section2));

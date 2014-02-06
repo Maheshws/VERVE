@@ -1,16 +1,12 @@
 package com.mahesh.verve;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +21,7 @@ public class EventViewFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private static EventsObject currentEvent;
+    private Activity parent;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -48,6 +45,7 @@ public class EventViewFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        parent = activity;
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
@@ -55,30 +53,35 @@ public class EventViewFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         TextView Titletext = (TextView) getActivity().findViewById(R.id.textEventName);
-        String Ttitle=currentEvent.getEvent_name().replace("</br>","<br>");
-        Ttitle=Ttitle.replace("\\'","'");
+        String Ttitle = currentEvent.getEvent_name().replace("</br>", "<br>");
+        Ttitle = Ttitle.replace("\\'", "'");
         Titletext.setText(Ttitle);
 
         TextView Desctext = (TextView) getActivity().findViewById(R.id.textDesc);
-        String Desc=currentEvent.getEvent_description().replace("</br>","<br>");
-        Desc=Desc.replace("\\'","'");
-        if(Desc.equals("null"))
+        String Desc = currentEvent.getEvent_description().replace("</br>", "<br>");
+        Desc = Desc.replace("\\'", "'");
+        if (Desc.equals("null"))
             Desctext.setText(Html.fromHtml(""));
         else
             Desctext.setText(Html.fromHtml(Desc));
 
         TextView Rulestext = (TextView) getActivity().findViewById(R.id.textEventRules);
-        String Rulestxt=currentEvent.getEvent_rules().replace("</br>","<br>");
-        Rulestxt=Rulestxt.replace("\\'","'");
-        if(Rulestxt.equals("null"))
+        String Rulestxt = currentEvent.getEvent_rules().replace("</br>", "<br>");
+        Rulestxt = Rulestxt.replace("\\'", "'");
+        if (Rulestxt.equals("null"))
             Rulestext.setText(Html.fromHtml(""));
         else
             Rulestext.setText(Html.fromHtml(Rulestxt));
 
 
-        ImageView imageView= (ImageView) getActivity().findViewById(R.id.imageView);
+        ImageView imageView = (ImageView) getActivity().findViewById(R.id.imageView);
         ImageLoader imgLoader = new ImageLoader(getActivity());
         imgLoader.DisplayImage(currentEvent.getImage_name(), R.drawable.ic_launcher, imageView);
+    }
+
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) parent).setActionBarTitle("Event");
     }
 }
 

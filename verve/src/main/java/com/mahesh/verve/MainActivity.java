@@ -3,22 +3,17 @@ package com.mahesh.verve;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.preference.PreferenceActivity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
@@ -62,50 +57,60 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         int cno = position + 1;
         switch (cno) {
-            case 1:break;
-            case 2:fragmentManager.beginTransaction()
-                    .replace(R.id.container, HomeSliderFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 1:
                 break;
-            case 3:fragmentManager.beginTransaction()
-                    .replace(R.id.container, AnnouncementHomeFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, HomeSliderFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
-            case 4:fragmentManager.beginTransaction()
-                    .replace(R.id.container, CultEventsListViewFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, AnnouncementHomeFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
-            case 5:fragmentManager.beginTransaction()
-                    .replace(R.id.container, SportsEventsListViewFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 4:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, CultEventsListViewFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
-            case 6:fragmentManager.beginTransaction()
-                    .replace(R.id.container, TechEventsListViewFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 5:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, SportsEventsListViewFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
-            case 7:fragmentManager.beginTransaction()
-                    .replace(R.id.container, FunEventsListViewFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 6:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, TechEventsListViewFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
-            case 8:fragmentManager.beginTransaction()
-                    .replace(R.id.container, SponsorsFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 7:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, FunEventsListViewFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
+                break;
+            case 8:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, SponsorsFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
 
-            case 9:fragmentManager.beginTransaction()
-                    .replace(R.id.container, ContactFragment.newInstance(position + 1))
-                    .addToBackStack(null)
-                    .commit();
+            case 9:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, ContactFragment.newInstance(position + 1))
+                        .addToBackStack(null)
+                        .commit();
                 break;
 
-            case 10:startActivity(new Intent(this, PreferencesActivity.class));
+            case 10:
+                startActivity(new Intent(this, PreferencesActivity.class));
                 break;
             default:
 
@@ -162,7 +167,7 @@ public class MainActivity extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-           // getMenuInflater().inflate(R.menu.main, menu);
+            // getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
         }
@@ -187,6 +192,7 @@ public class MainActivity extends ActionBarActivity
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(Title);
     }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -197,6 +203,7 @@ public class MainActivity extends ActionBarActivity
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
         private Activity parent;
+
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -214,7 +221,7 @@ public class MainActivity extends ActionBarActivity
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText("WELCOME!");
@@ -228,6 +235,7 @@ public class MainActivity extends ActionBarActivity
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+
         public void onResume() {
             super.onResume();
             ((MainActivity) parent).setActionBarTitle(getString(R.string.title_section2));

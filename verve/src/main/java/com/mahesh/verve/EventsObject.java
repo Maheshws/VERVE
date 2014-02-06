@@ -5,7 +5,7 @@ package com.mahesh.verve;
  */
 public class EventsObject {
     int event_id;
-    String event_name, event_rules, event_description,image_name,event_type;
+    String event_name, event_rules, event_description, image_name, event_type;
 
     public EventsObject(int event_id, String event_name, String event_rules, String event_description, String image_name, String event_type) {
         this.event_id = event_id;

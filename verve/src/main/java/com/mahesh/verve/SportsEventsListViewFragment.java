@@ -119,8 +119,8 @@ public class SportsEventsListViewFragment extends Fragment {
             current = allspEvents.get(position);
 
             TextView Titletext = (TextView) view.findViewById(R.id.event_name_textview);
-            String Ttitle=current.getEvent_name().replace("</br>","<br>");
-            Ttitle=Ttitle.replace("\\'","'");
+            String Ttitle = current.getEvent_name().replace("</br>", "<br>");
+            Ttitle = Ttitle.replace("\\'", "'");
             Titletext.setText(Ttitle);
 
 

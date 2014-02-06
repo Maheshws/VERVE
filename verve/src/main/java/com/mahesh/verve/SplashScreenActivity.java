@@ -20,11 +20,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 
 public class SplashScreenActivity extends Activity {
-    private static final int MAXPROGRESS = 160;
+    private static final int MAXPROGRESS = 180;
     ProgressBar progress;
     boolean first_run = true;
     Animation animFadein;
@@ -42,7 +41,7 @@ public class SplashScreenActivity extends Activity {
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_in);
 
-        ImageView imgv= (ImageView) findViewById(R.id.imageView);
+        ImageView imgv = (ImageView) findViewById(R.id.imageView);
         imgv.startAnimation(animFadein);
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
@@ -71,11 +70,18 @@ public class SplashScreenActivity extends Activity {
                 }
             });
 
-        }
-        else if(first_run==false) {
+        } else if (first_run == false) {
+            try {
+                for (int i = 0; i < 13; i++) {
+                    Thread.sleep(100);
+                    updateProgess2();
+                }
+
+            } catch (Exception e) {
+
+            }
             actionComplete();
-        }
-        else {
+        } else {
             try {
                 UtilitiesMethod utils = new UtilitiesMethod();
                 utils.setContext(getApplicationContext());
@@ -89,6 +95,8 @@ public class SplashScreenActivity extends Activity {
                 utils.getFunEvents();
                 updateProgess();
                 utils.getAnnouncements();
+                updateProgess();
+                utils.getSponsors();
                 updateProgess();
                 errorFlag = utils.getErrorFlag();
                 updateProgess();
@@ -108,8 +116,15 @@ public class SplashScreenActivity extends Activity {
                         }
                     });
 
-                } else
+                } else {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     actionComplete();
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -119,11 +134,7 @@ public class SplashScreenActivity extends Activity {
 
     protected void actionComplete() {
         updateProgess();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         SharedPreferences pref = getSharedPreferences("user_settings", 0);
         Boolean Service = pref.getBoolean("Notification", false);
         if (Service) {
@@ -140,6 +151,15 @@ public class SplashScreenActivity extends Activity {
             @Override
             public void run() {
                 progress.incrementProgressBy(20);
+            }
+        });
+    }
+
+    protected void updateProgess2() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progress.incrementProgressBy(10);
             }
         });
     }

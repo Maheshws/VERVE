@@ -91,6 +91,7 @@ public class NotificationService extends Service {
         if (utils.getAnnouncementIndex()) {
             utils.getCurrentAnnouncement();
             utils.getAnnouncements();
+            utils.getSponsors();
             nTitle = utils.getATitle();
             nMessage = utils.getAMessage();
             return true;
@@ -105,7 +106,7 @@ public class NotificationService extends Service {
                 System.currentTimeMillis());
         Context context = getApplicationContext();
         String notificationTitle = nTitle;
-        String notificationText = nMessage;
+        String notificationText = "Click to view Announcement...";
         Intent myIntent = new Intent(this, SplashScreenActivity.class);
         PendingIntent pendingIntent
                 = PendingIntent.getActivity(NotificationService.this,

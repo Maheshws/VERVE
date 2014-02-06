@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.TextView;
 
 /**
  * Created by Mahesh on 1/28/14.
@@ -21,6 +19,10 @@ public class SponsorsFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+
+    private Activity parent;
+
+    String contentHTML;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -35,7 +37,6 @@ public class SponsorsFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,34 +48,31 @@ public class SponsorsFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        parent = activity;
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        new Thread(new Runnable() {
-            public void run() {
-                UtilitiesMethod utils=new UtilitiesMethod();
-                utils.setContext(getActivity());
-                utils.getSponsors();
-                final String contentHTML=utils.getSponsorsList();
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    WebView contentView = (WebView) getActivity().findViewById(R.id.webView);
-                    contentView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-                    contentView.getSettings().setLoadWithOverviewMode(true);
-                    contentView.getSettings().setUseWideViewPort(true);
-                    contentView.getSettings().setBuiltInZoomControls(false);
-                    contentView.setBackgroundColor(Color.TRANSPARENT);
-                    contentView.loadDataWithBaseURL(null, contentHTML, "text/html", "UTF-8", null);
-                }
-            });
+        final UtilitiesMethod utils = new UtilitiesMethod();
+        utils.setContext(getActivity());
 
-            }
-        }).start();
+        contentHTML = utils.getSponsorsList();
+        WebView contentView = (WebView) getActivity().findViewById(R.id.webView);
+        contentView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        contentView.getSettings().setLoadWithOverviewMode(true);
+        contentView.getSettings().setUseWideViewPort(true);
+        contentView.getSettings().setBuiltInZoomControls(false);
+        contentView.setBackgroundColor(Color.TRANSPARENT);
+        contentView.loadDataWithBaseURL(null, contentHTML, "text/html", "UTF-8", null);
 
 
+    }
+
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) parent).setActionBarTitle(getString(R.string.title_section8));
     }
 }
 

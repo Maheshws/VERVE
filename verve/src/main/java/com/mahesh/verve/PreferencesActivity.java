@@ -10,7 +10,6 @@ import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * Created by Mahesh on 12/21/13.
@@ -52,13 +51,13 @@ public class PreferencesActivity extends PreferenceActivity {
         AboutApp.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-               // startActivity(new Intent(PreferencesActivity.this, AboutVITACMActivity.class));
+                startActivity(new Intent(PreferencesActivity.this, AboutVERVEActivity.class));
                 return false;
             }
         });
 
         final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
-        Preference PlayStore=findPreference("PlayStore");
+        Preference PlayStore = findPreference("PlayStore");
         PlayStore.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {

@@ -41,7 +41,7 @@ public class AnnouncementHomeFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         parent = activity;
-        HEADER_BAR = getString(R.string.title_section4);
+        HEADER_BAR = getString(R.string.title_section3);
         ((MainActivity) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }

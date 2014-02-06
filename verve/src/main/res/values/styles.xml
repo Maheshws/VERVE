@@ -168,6 +168,10 @@
         <item name="popupMenuStyle">@style/PopupMenu.Vtheme</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Vtheme</item>
     </style>
+    <style name="DialogTheme" parent="@android:style/Theme.DeviceDefault.Dialog">
+        <item name="android:divider">@color/vtheme_color</item>
+        <item name="android:windowTitleStyle">@style/ActionBar.Solid.Vtheme</item>
 
-
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>
